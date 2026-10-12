@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NSUT Connect — your campus community in one place.">
+  <title>NSUT Connect | Campus Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style(1).css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <section id="login-screen" class="login-screen">
+    <div class="login-art">
+      <div class="art-grid"></div>
+      <div class="brand brand-large"><span class="brand-mark">N</span><span>NSUT<span class="brand-light">CONNECT</span></span></div>
+      <div class="login-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> YOUR CAMPUS. CONNECTED.</p>
+        <h1>Campus life,<br><span>in sync.</span></h1>
+        <p>One space for conversations, campus updates, and everything happening at NSUT.</p>
+      </div>
+      <div class="art-footer"><span>BUILT FOR THE NSUT COMMUNITY</span><span>28.6090° N / 77.0380° E</span></div>
+    </div>
+    <div class="login-panel">
+      <div class="login-mobile-brand brand"><span class="brand-mark">N</span><span>NSUT<span class="brand-light">CONNECT</span></span></div>
+      <div class="login-form-wrap">
+        <span class="section-kicker">WELCOME BACK</span>
+        <h2>Good to see you.</h2>
+        <p class="muted">Sign in to catch up with your campus.</p>
+        <form id="login-form">
+          <label for="login-name">Your name</label>
+          <input id="login-name" name="name" type="text" placeholder="e.g. Arunima Sharma" required autocomplete="name">
+          <label for="login-email">College email <span class="optional">(demo only)</span></label>
+          <input id="login-email" name="email" type="email" placeholder="arunima.sharma.ug26@nsut.ac.in" required autocomplete="email">
+          <label for="login-role">Continue as</label>
+          <select id="login-role" name="role">
+            <option value="student">Student</option>
+            <option value="admin">Teacher/Admin/Staff</option>
+          </select>
+          <button class="btn btn-primary btn-full" type="submit">Enter NSUT Connect <span>↗</span></button>
+        </form>
+    </div>
+  </section>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <a href="#" class="brand sidebar-brand" data-page="dashboard"><span class="brand-mark">N</span><span>NSUT<span class="brand-light">CONNECT</span></span></a>
+      <div class="campus-label">CAMPUS NETWORK <span class="live-label"><i></i> LIVE</span></div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span> Overview</button>
+        <button class="nav-item" data-page="feed"><span class="nav-icon">◉</span> Discussions <span id="nav-post-count" class="nav-count">4</span></button>
+        <button class="nav-item" data-page="announcements"><span class="nav-icon">▤</span> Announcements <span class="nav-dot"></span></button>
+        <button class="nav-item" data-page="timetable"><span class="nav-icon">▦</span> Timetable</button>
+        <button class="nav-item" data-page="profile"><span class="nav-icon">◌</span> My profile</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><span class="tip-spark">✳</span><p><strong>Stay in the loop.</strong><br>Campus updates, minus the chaos.</p></div>
+        <button id="theme-toggle" class="theme-toggle"><span id="theme-icon">☼</span> Switch appearance</button>
+        <button id="logout-btn" class="logout-btn"><span>↪</span> Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="mobile-brand brand"><span class="brand-mark">N</span><span>NSUT<span class="brand-light">CONNECT</span></span></div>
+        <div class="breadcrumb"><span>Campus</span><span class="crumb-slash">/</span><strong id="page-label">Overview</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box"><span>⌕</span><input id="global-search" type="search" placeholder="Search campus..." aria-label="Search campus"></label>
+          <button class="icon-button" id="top-theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+          <button class="avatar avatar-small" id="top-avatar" data-page="profile" aria-label="Open profile">A</button>
+        </div>
+      </header>
+
+      <section id="page-dashboard" class="page active-page">
+        <div class="welcome-row">
+          <div><p class="eyebrow"><span class="pulse-dot"></span> MONDAY, ON CAMPUS</p><h1>Hey, <span id="welcome-name">there</span> <span class="wave">✳</span></h1><p class="muted">Here's what's happening around your campus today.</p></div>
+          <button class="btn btn-primary" data-page="feed">＋ Start a discussion</button>
+        </div>
+        <div class="hero-card">
+          <div class="hero-content"><span class="hero-tag">YOUR CAMPUS, AT A GLANCE</span><h2>Good things happen<br>when we <span>connect.</span></h2><p>Find your people, stay updated, and make the most of campus life.</p><button class="btn btn-light" data-page="announcements">Explore campus updates <span>↗</span></button></div>
+          <div class="hero-graphic" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-core">N<span>+</span></div><span class="orbit-node node-one">✳</span><span class="orbit-node node-two">◉</span><span class="orbit-node node-three">↗</span><span class="orbit-node node-four">▤</span></div>
+          <div class="hero-index">NC / 001</div>
+        </div>
+        <div class="section-heading"><div><span class="section-kicker">THE CAMPUS PULSE</span><h2>Your campus snapshot</h2></div><span class="updated-label"><i></i> Updated just now</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Active discussions</span><span class="stat-icon green">◉</span></div><strong id="stat-posts">04</strong><p><span class="positive">↗ Community</span> conversations</p></article>
+          <article class="stat-card"><div class="stat-top"><span>Campus updates</span><span class="stat-icon yellow">▤</span></div><strong id="stat-announcements">03</strong><p>Latest notices and news</p></article>
+          <article class="stat-card"><div class="stat-top"><span>Classes today</span><span class="stat-icon blue">▦</span></div><strong id="stat-classes">05</strong><p>On your sample timetable</p></article>
+          <article class="stat-card"><div class="stat-top"><span>Your campus status</span><span class="stat-icon pink">✳</span></div><strong class="status-word">In the loop</strong><p>You're all caught up</p></article>
+        </div>
+        <div class="dashboard-columns">
+          <section class="content-card">
+            <div class="card-heading"><div><span class="section-kicker">HEAR IT HERE</span><h3>Trending discussions</h3></div><button class="text-link" data-page="feed">View all ↗</button></div>
+            <div id="dashboard-posts" class="compact-post-list"></div>
+          </section>
+          <section class="content-card">
+            <div class="card-heading"><div><span class="section-kicker">DON'T MISS OUT</span><h3>Latest announcements</h3></div><button class="text-link" data-page="announcements">All updates ↗</button></div>
+            <div id="dashboard-announcements" class="mini-announcements"></div>
+          </section>
+        </div>
+        <section class="content-card today-card">
+          <div class="card-heading"><div><span class="section-kicker">YOUR DAY, PLANNED</span><h3>Next up on your timetable</h3></div><button class="text-link" data-page="timetable">Full timetable ↗</button></div>
+          <div id="dashboard-classes" class="next-classes"></div>
+        </section>
+      </section>
+
+      <section id="page-feed" class="page">
+        <div class="page-intro"><div><span class="section-kicker">THE COMMON ROOM</span><h1>Discussions<span class="title-period">.</span></h1><p class="muted">Questions, ideas, recommendations — start a conversation.</p></div><button class="btn btn-primary" id="open-post-modal">＋ New post</button></div>
+        <div class="feed-layout">
+          <div class="feed-main">
+            <div class="feed-toolbar"><div class="filter-tabs"><button class="filter-tab active" data-filter="all">All posts</button><button class="filter-tab" data-filter="trending">Trending</button><button class="filter-tab" data-filter="question">Questions</button></div><select id="feed-sort" aria-label="Sort posts"><option value="latest">Latest first</option><option value="popular">Most liked</option></select></div>
+            <div id="feed-posts" class="feed-posts"></div>
+            <div id="feed-empty" class="empty-state hidden"><span>◉</span><h3>No discussions found</h3><p>Try another search or start a conversation.</p></div>
+          </div>
+          <aside class="feed-aside">
+            <div class="content-card community-card"><span class="section-kicker">COMMUNITY GUIDELINES</span><h3>Keep it constructive.</h3><p>Be curious, be kind, and help make campus a better place for everyone.</p><div class="guideline"><span>01</span> Respect different perspectives</div><div class="guideline"><span>02</span> Keep it relevant and helpful</div><div class="guideline"><span>03</span> No spam or personal attacks</div></div>
+            <div class="content-card tags-card"><span class="section-kicker">EXPLORE TOPICS</span><h3>Find your corner.</h3><div class="tag-cloud"><button data-tag="Academics">#academics</button><button data-tag="Tech">#tech</button><button data-tag="Campus life">#campuslife</button><button data-tag="Events">#events</button><button data-tag="Help">#help</button></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="page-announcements" class="page">
+        <div class="page-intro"><div><span class="section-kicker">OFFICIAL-ISH, ALL IN ONE PLACE</span><h1>Announcements<span class="title-period">.</span></h1><p class="muted">Important updates for your campus life. Sample content for this demo.</p></div><button id="admin-add-announcement" class="btn btn-primary hidden">＋ Publish update</button></div>
+        <div class="announcement-feature"><div class="feature-icon">▤</div><div><span class="hero-tag">CAMPUS NOTICEBOARD</span><h2>Know what's next.</h2><p>Deadlines, events, opportunities — all in one feed.</p></div><div class="feature-decoration">NC<br><span> / 02</span></div></div>
+        <div class="announcement-controls"><div class="filter-tabs" id="announcement-filters"><button class="filter-tab active" data-category="All">All updates</button><button class="filter-tab" data-category="Academic">Academic</button><button class="filter-tab" data-category="Events">Events</button><button class="filter-tab" data-category="Opportunities">Opportunities</button></div><span id="announcement-count" class="muted small-text"></span></div>
+        <div id="announcement-list" class="announcement-list"></div>
+      </section>
+
+      <section id="page-timetable" class="page">
+        <div class="page-intro"><div><span class="section-kicker">PLAN YOUR WEEK</span><h1>Timetable<span class="title-period">.</span></h1><p class="muted">A sample schedule you can edit for your own routine.</p></div><button id="edit-timetable" class="btn btn-secondary">✎ Edit schedule</button></div>
+        <div class="schedule-summary"><div><span class="section-kicker">THIS WEEK</span><h2>Make time for what matters.</h2><p class="muted">Select a day to see your classes and study blocks.</p></div><div class="summary-number"><strong id="day-class-count">5</strong><span>SESSIONS<br>SELECTED DAY</span></div></div>
+        <div id="day-tabs" class="day-tabs"></div>
+        <div class="timetable-wrap"><div class="table-head"><span>TIME</span><span>SESSION</span><span>LOCATION</span><span>TYPE</span></div><div id="timetable-rows"></div></div>
+        <p class="footnote">* Demo schedule only. Confirm your actual timetable with official college sources.</p>
+      </section>
+
+      <section id="page-profile" class="page">
+        <div class="page-intro"><div><span class="section-kicker">YOUR SPACE</span><h1>My profile<span class="title-period">.</span></h1><p class="muted">Make your campus identity yours.</p></div><button id="edit-profile-btn" class="btn btn-secondary">✎ Edit profile</button></div>
+        <div class="profile-layout">
+          <section class="profile-card content-card"><div class="profile-cover"><span>NSUT CONNECT / MEMBER</span><span class="cover-symbol">N+</span></div><div class="profile-main"><div id="profile-avatar" class="avatar profile-avatar">A</div><span id="profile-role-badge" class="role-badge">STUDENT</span><h2 id="profile-name">Campus Student</h2><p id="profile-email" class="muted">student@nsut.ac.in</p><p id="profile-bio" class="profile-bio">Here to learn, build, and connect.</p><div class="profile-details"><div><span>BRANCH / PROGRAMME</span><strong id="profile-branch">Computer Science & Engineering</strong></div><div><span>YEAR</span><strong id="profile-year">2nd Year</strong></div><div><span>MEMBER SINCE</span><strong>October 2026</strong></div></div></div></section>
+          <section class="content-card profile-settings"><span class="section-kicker">YOUR CAMPUS FOOTPRINT</span><h3>Community activity</h3><div class="activity-row"><span class="activity-icon">◉</span><div><strong id="profile-post-count">0 posts</strong><p class="muted">Conversations started</p></div></div><div class="activity-row"><span class="activity-icon">♡</span><div><strong id="profile-like-count">0 likes</strong><p class="muted">Likes given in this session</p></div></div><div class="profile-tip"><span>✳</span><p><strong>Small steps, strong community.</strong><br>Ask a question, share a resource, or help a fellow student.</p></div></section>
+        </div>
+      </section>
+
+      <footer class="app-footer"><span>© 2026 NSUT CONNECT</span></footer>
+    </main>
+  </div>
+
+  <div id="post-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="post-modal-title">
+    <div class="modal">
+      <div class="modal-header"><div><span class="section-kicker">YOUR VOICE MATTERS</span><h2 id="post-modal-title">Start a discussion</h2></div><button class="modal-close" data-close-modal aria-label="Close">×</button></div>
+      <form id="post-form"><label for="post-title">Post title</label><input id="post-title" maxlength="100" placeholder="What's on your mind?" required><label for="post-body">Tell the community more</label><textarea id="post-body" rows="4" maxlength="800" placeholder="Share details, ask a question, or start a conversation..." required></textarea><div class="form-row"><div><label for="post-category">Topic</label><select id="post-category"><option>Campus life</option><option>Academics</option><option>Tech</option><option>Events</option><option>Help</option></select></div><div><label for="post-kind">Post type</label><select id="post-kind"><option value="discussion">Discussion</option><option value="question">Question</option></select></div></div><button class="btn btn-primary btn-full" type="submit">Publish discussion ↗</button></form>
+    </div>
+  </div>
+
+  <div id="comment-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="comment-modal-title">
+    <div class="modal"><div class="modal-header"><div><span class="section-kicker">KEEP IT GOING</span><h2 id="comment-modal-title">Conversation</h2></div><button class="modal-close" data-close-modal aria-label="Close">×</button></div><div id="comment-thread" class="comment-thread"></div><form id="comment-form"><label for="comment-input">Add a comment</label><textarea id="comment-input" rows="3" maxlength="400" placeholder="Be helpful, be kind..." required></textarea><button class="btn btn-primary btn-full" type="submit">Post comment ↗</button></form></div>
+  </div>
+
+  <div id="profile-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
+    <div class="modal"><div class="modal-header"><div><span class="section-kicker">MAKE IT YOURS</span><h2 id="profile-modal-title">Edit profile</h2></div><button class="modal-close" data-close-modal aria-label="Close">×</button></div><form id="profile-form"><label for="edit-name">Full name</label><input id="edit-name" required maxlength="60"><label for="edit-email">College email</label><input id="edit-email" type="email" required><label for="edit-branch">Branch / programme</label><input id="edit-branch" maxlength="80" placeholder="e.g. Computer Science & Engineering"><label for="edit-year">Year</label><select id="edit-year"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>Postgraduate</option></select><label for="edit-bio">Short bio</label><textarea id="edit-bio" rows="3" maxlength="180" placeholder="A little about you..."></textarea><button class="btn btn-primary btn-full" type="submit">Save profile ↗</button></form></div>
+  </div>
+
+  <div id="announcement-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="announcement-modal-title">
+    <div class="modal"><div class="modal-header"><div><span class="section-kicker">ADMIN DEMO</span><h2 id="announcement-modal-title">Publish an update</h2></div><button class="modal-close" data-close-modal aria-label="Close">×</button></div><form id="announcement-form"><label for="new-ann-title">Title</label><input id="new-ann-title" maxlength="100" required><label for="new-ann-body">Details</label><textarea id="new-ann-body" rows="4" maxlength="600" required></textarea><label for="new-ann-category">Category</label><select id="new-ann-category"><option>Academic</option><option>Events</option><option>Opportunities</option></select><label for="new-ann-priority">Priority</label><select id="new-ann-priority"><option>Normal</option><option>Important</option><option>Urgent</option></select><button class="btn btn-primary btn-full" type="submit">Publish update ↗</button></form></div>
+  </div>
+
+  <div id="timetable-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="timetable-modal-title">
+    <div class="modal"><div class="modal-header"><div><span class="section-kicker">PERSONAL SCHEDULE</span><h2 id="timetable-modal-title">Add a session</h2></div><button class="modal-close" data-close-modal aria-label="Close">×</button></div><form id="timetable-form"><label for="session-day">Day</label><select id="session-day"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select><label for="session-time">Time</label><input id="session-time" placeholder="10:00 – 11:00" required><label for="session-name">Session name</label><input id="session-name" required maxlength="70"><label for="session-location">Location</label><input id="session-location" placeholder="e.g. Room 204" required maxlength="60"><label for="session-type">Type</label><select id="session-type"><option>Lecture</option><option>Lab</option><option>Tutorial</option><option>Study</option><option>Club</option></select><button class="btn btn-primary btn-full" type="submit">Add to timetable ↗</button></form></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
